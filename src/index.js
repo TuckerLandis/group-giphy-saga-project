@@ -60,8 +60,15 @@ function* fetchFavorites() {
   }
 }
 
-function* postFavorite() {
-    
+function* postFavorite(action) {
+    try {
+        yield axios.post('/api/favorite', {url: action.payload});
+        // could do a yield PUT here to set reducer state, but it's
+        // probably unnecessary 
+    } catch (error) {
+        console.log(`We have a POST favorites error... ${error}`)
+    }
+
 }
 
 function* watcherSaga() {
