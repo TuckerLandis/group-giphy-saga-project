@@ -36,7 +36,7 @@ const categories = (state = [], action) => {
 
 function* fetchResults(action) {
   try {
-    yield axios.get("/api/category/search", {
+    const response = yield axios.get("/api/category/search", {
       params: {
         searchTag: action.payload,
       },
@@ -58,6 +58,7 @@ function* fetchFavorites() {
   } catch (error) {
     console.log(`We have a GET favorites error... ${error}`);
   }
+}
 
 function* postFavorite() {
     
@@ -89,5 +90,4 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById("root")
-);
+  document.getElementById('root'));
