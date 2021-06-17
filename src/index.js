@@ -8,9 +8,17 @@ import { takeEvery, put } from "redux-saga/effects";
 import axios from "axios";
 import createSagaMiddleware from "redux-saga";
 import logger from "redux-logger";
+import { response } from 'express';
+
+/***** REDUCERS ******/
 
 const searchResults = (state = [], action) => {
-    
+    switch(action.type) {
+        case "SET_SEARCH_IMAGES":
+            return action.payload
+        default:
+            return state;
+    }
     return state;
 
 }
@@ -26,16 +34,36 @@ const categories = (state = [], action) => {
 
 }
 
-function* setResults () {
+/***** SAGA WORKERS *****/
 
-    //yield axios.get('')
+function* fetchResults (action) {
+    try {
+        yield axios.get('/api/category/search', {
+            params: {
+                searchTag: action.payload
+            }
+        })
+        console.log('fetching search results', response);
+        yield put({
+            type: 'SET_SEARCH_IMAGES',
+            payload: response.data
+        })
+    } catch (error) {
+        console.error('error with Results GET request', error);
+    } 
+    
 }
+
+function* fetchFavorites ()
 
 
 function* watcherSaga () {
-// for every type: 'SEARCH_GIFS' ->> setResults (generator func)' 
-
-
+// for every type: 'FETCH_RESULTS' ->> fetchResults (generator func)' 
+    yield takeEvery('FETCH_RESULTS', fetchResults);
+    // looks for client GET requests on the favorites view
+    yield takeEvery('FETCH_FAVORITES', fetchFavorites);
+    // looks for client POST requests when adding an image to favorites
+    yield takeEvery('POST_FAVORITE', postFavorite);
 }
 
 

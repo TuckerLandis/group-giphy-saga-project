@@ -40,16 +40,18 @@ Reducers
 - [ ] searchResults
     - [ ] GET request
 
+
 Action Names
 - [ ] To Reducers
-    - [ ] 'SET_RESULTS'
+    - [ ] 'SET_SEARCH_IMAGES' -- Reducer Name
     - [ ] 'SET_FAVORITES'
 
 
 - [ ] To Sagas
-    - [ ] 'SEARCH_GIFS'
-    - [ ] 'FETCH_RESULTS'
-    - [ ] 'FETCH_FAVORITES'
+    <!-- - [ ] 'SEARCH_GIFS'  -->
+    - [ ] 'FETCH_RESULTS' - GET route attached to GIPHY API query
+        - [ ] 'SET_SEARCH_IMAGES'
+    - [ ] 'FETCH_FAVORITES' GET route to DB
     - [ ] 'POST_FAVORITE'
 
 
