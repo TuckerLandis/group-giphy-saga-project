@@ -9,6 +9,7 @@ import axios from "axios";
 import createSagaMiddleware from "redux-saga";
 import logger from "redux-logger";
 
+
 /***** REDUCERS ******/
 
 const searchResults = (state = [], action) => {
@@ -57,6 +58,9 @@ function* fetchFavorites() {
   } catch (error) {
     console.log(`We have a GET favorites error... ${error}`);
   }
+
+function* postFavorite() {
+    
 }
 
 function* watcherSaga() {
