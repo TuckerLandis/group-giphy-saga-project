@@ -1,4 +1,4 @@
-function searchForm() {
+function SearchForm() {
 
     return (
         <h3>In SearchForm</h3>
@@ -6,3 +6,5 @@ function searchForm() {
 }
 
 export default SearchForm;
+
+// input, go button, -->> giphy api request

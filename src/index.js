@@ -11,23 +11,34 @@ import logger from "redux-logger";
 
 const searchResults = (state = [], action) => {
     
+    return state;
 
-    
 }
 const favoritesList = (state = [], action) => {
     
 
+    return state;
     
 }
 const categories = (state = [], action) => {
 
+    return state;
 
+}
+
+function* setResults () {
+
+    //yield axios.get('')
 }
 
 
 function* watcherSaga () {
+// for every type: 'SEARCH_GIFS' ->> setResults (generator func)' 
+
 
 }
+
+
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
@@ -43,4 +54,4 @@ applyMiddleware(sagaMiddleware, logger)
 
 sagaMiddleware.run(watcherSaga); 
 
-ReactDOM.render(<Provider><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));

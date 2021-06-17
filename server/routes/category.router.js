@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     });
 });
 
----> client side /api/category/search
+// ---> client side /api/category/search
 // router.get("/search", (req, res) => {
 //   axios
 //     .get(

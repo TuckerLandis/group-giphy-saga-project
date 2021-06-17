@@ -11,7 +11,8 @@ SEARCH VIEW
 
 
 Data Model
-- [ ] 
+
+
 
 
 
@@ -34,15 +35,24 @@ Reducers
     - [ ] GET request
 - [ ] favoritesList
     - [ ] GET request
-    - [ ] POST request
+    - [ ] PUT request
     - [ ] STRETCH: DELETE request
 - [ ] searchResults
     - [ ] GET request
 
 Action Names
-- [ ] 'SEARCH_GIFS'
-- [ ] 'SET_RESULTS'
-- [ ] 'FETCH_RESULTS'
-- [ ] 'PUT_FAVORITE'
-- [ ] 'SET_FAVORITES'
-- [ ] 'FETCH_FAVORITES'
+- [ ] To Reducers
+    - [ ] 'SET_RESULTS'
+    - [ ] 'SET_FAVORITES'
+
+
+- [ ] To Sagas
+    - [ ] 'SEARCH_GIFS'
+    - [ ] 'FETCH_RESULTS'
+    - [ ] 'FETCH_FAVORITES'
+    - [ ] 'POST_FAVORITE'
+
+
+
+
+

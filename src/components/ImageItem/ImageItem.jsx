@@ -6,3 +6,5 @@ function ImageItem() {
 }
 
 export default ImageItem;
+
+// needs button to favorite, 
