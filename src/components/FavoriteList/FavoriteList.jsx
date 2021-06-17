@@ -12,10 +12,10 @@ function FavoriteList() {
     dispatch({ type: "FETCH_FAVORITES" });
   };
   // use effect for fetch favorites - from DB
-  useEffect(() => {
-    getFavoriteImages();
-  }, []);
-
+//   useEffect(() => {
+//     getFavoriteImages();
+//   }, []);
+  console.log(favoritesList)
   return (
     <>
       <h3>In FavoriteList</h3>
