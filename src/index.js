@@ -70,6 +70,15 @@ function* postFavorite(action) {
     }
 }
 
+function* fetchCategories() {
+    try {
+
+    } catch {
+        
+    }
+}
+
+
 function* watcherSaga() {
   // for every type: 'FETCH_RESULTS' ->> fetchResults (generator func)'
   yield takeEvery("FETCH_RESULTS", fetchResults);
