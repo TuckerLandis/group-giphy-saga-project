@@ -1,4 +1,5 @@
-function ImageItem() {
+
+function ImageItem( {imageData }) {
 
     return (
         <h3>In ImageItem</h3>
