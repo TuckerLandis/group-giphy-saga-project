@@ -8,7 +8,7 @@ import { takeEvery, put } from "redux-saga/effects";
 import axios from "axios";
 import createSagaMiddleware from "redux-saga";
 import logger from "redux-logger";
-import { response } from 'express';
+
 
 /***** REDUCERS ******/
 
@@ -54,7 +54,7 @@ function* fetchResults (action) {
     
 }
 
-function* fetchFavorites ()
+// function* fetchFavorites ()
 
 
 function* watcherSaga () {
