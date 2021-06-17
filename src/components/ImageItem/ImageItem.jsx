@@ -5,6 +5,7 @@ function ImageItem( {imageData }) {
     const dispatch = useDispatch();
     // save image URL
     const imageUrl = imageData.data?.images.original.url;
+    console.log(imageUrl);
 
 
 
