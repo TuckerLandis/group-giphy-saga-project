@@ -58,7 +58,7 @@ function* fetchFavorites() {
   } catch (error) {
     console.log(`We have a GET favorites error... ${error}`);
   }
-
+}
 function* postFavorite() {
     
 }
