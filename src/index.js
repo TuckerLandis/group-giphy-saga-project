@@ -15,7 +15,7 @@ import logger from "redux-logger";
 const searchResults = (state = [], action) => {
   switch (action.type) {
     case "SET_SEARCH_IMAGES":
-      return action.payload;
+      return action.payload.data;
     default:
       return state;
   }
@@ -35,13 +35,13 @@ const categories = (state = [], action) => {
 /***** SAGA WORKERS *****/
 
 function* fetchResults(action) {
-  try {
+  try { 
     const response = yield axios.get("/api/category/search", {
       params: {
         searchTag: action.payload,
       },
     });
-    console.log("fetching search results", response);
+    yield console.log("fetching search results", response);
     yield put({
       type: "SET_SEARCH_IMAGES",
       payload: response.data,
