@@ -68,7 +68,6 @@ function* postFavorite(action) {
     } catch (error) {
         console.log(`We have a POST favorites error... ${error}`)
     }
-
 }
 
 function* watcherSaga() {
@@ -78,6 +77,8 @@ function* watcherSaga() {
   yield takeEvery("FETCH_FAVORITES", fetchFavorites);
   // looks for client POST requests when adding an image to favorites
   yield takeEvery("POST_FAVORITE", postFavorite);
+  // looks for requests to GET all of the categories from the DB
+  yield takeEvery("FETCH_CATEGORIES", fetchCategories)
 }
 
 const sagaMiddleware = createSagaMiddleware();
