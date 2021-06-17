@@ -21,9 +21,11 @@ router.get('/', (req, res) => {
 
 // ---> client side /api/category/search
 router.get("/search", (req, res) => {
+  console.log('got to giphy search', req.query);
+  
   axios
     .get(
-      `http://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${req.params.searchTag}&limit=12`
+      `http://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${req.query.searchTag}&limit=12`
     )
     .then((response) => {
       console.log(response.data);

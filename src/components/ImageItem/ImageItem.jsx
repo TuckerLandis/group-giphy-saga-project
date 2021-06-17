@@ -4,14 +4,14 @@ import Button from '@material-ui/core/Button'
 function ImageItem( {imageData }) {
     const dispatch = useDispatch();
     // save image URL
-    const imageUrl = imageData.data?.images.original.url;
-    console.log(imageUrl);
+    const imageUrl = imageData.images.original.url;
+    
 
 
 
     return (
         <div>
-            {/* <img src={imageUrl} alt="searched GIF"></img> */}
+            <img src={imageUrl} alt="searched GIF"></img>
             <Button
                 color="primary"
                 variant="contained"

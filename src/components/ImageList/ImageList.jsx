@@ -1,12 +1,15 @@
 
 // components
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import ImageItem from '../ImageItem/ImageItem.jsx'
 
 function ImageList() {
     // get data from reducer for searched images
+  
     const searchResults = useSelector(store => store.searchResults);
     
+    // console.log(searchResults);
 
 
 
@@ -14,8 +17,8 @@ function ImageList() {
         <div>
             <h3>In ImageList</h3>
             {searchResults.map( (imageData, index) => (
-                <ImageList key={index} imageData={imageData}/>
-            ))}
+            <ImageItem key={index} imageData={imageData}/>
+             ))}
         </div>
     )
 }
