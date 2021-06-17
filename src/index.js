@@ -54,7 +54,9 @@ function* fetchResults (action) {
     
 }
 
-// function* fetchFavorites ()
+function* fetchFavorites () {
+
+}
 
 
 function* watcherSaga () {
