@@ -1,8 +1,17 @@
+import { useDispatch } from "react-redux";
+import Button from '@material-ui/core'
 
 function ImageItem( {imageData }) {
+    const dispatch = useDispatch();
+    // save image URL
+    const imageUrl = imageData.data?.images.original.url;
+
+
 
     return (
-        <h3>In ImageItem</h3>
+        <div>
+            <img src={imageUrl} alt="searched GIF"></img>
+        </div>
     )
 }
 
