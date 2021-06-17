@@ -14,7 +14,7 @@ function ImageList() {
 
 
     return (
-        <div>
+        <div className="images-display">
             <h3>In ImageList</h3>
             {searchResults.map( (imageData, index) => (
             <ImageItem key={index} imageData={imageData}/>
