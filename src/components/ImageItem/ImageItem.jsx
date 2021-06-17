@@ -10,7 +10,7 @@ function ImageItem( {imageData }) {
 
     return (
         <div>
-            <img src={imageUrl} alt="searched GIF"></img>
+            {/* <img src={imageUrl} alt="searched GIF"></img> */}
         </div>
     )
 }
