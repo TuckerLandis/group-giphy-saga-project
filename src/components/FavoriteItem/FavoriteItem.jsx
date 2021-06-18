@@ -39,10 +39,10 @@ function FavoriteItem({ imageData }) {
 
 
   const handleDelete = () => {
-      console.log(imageData.url);
+      console.log(imageData);
     dispatch({
         type: 'REMOVE_FAVORITE',
-        payload: imageData.url
+        payload: imageData.id
     })
 
   }

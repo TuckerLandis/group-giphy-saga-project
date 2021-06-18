@@ -86,6 +86,9 @@ function* fetchCategories() {
 function* removeFavorite(action) {
     try {
         yield axios.delete(`/api/favorite/${action.payload}`)
+        yield put ({
+            type: 'FETCH_FAVORITES'
+        })
     } catch (error) {
         console.log('error when removing favorite..', error);
         
