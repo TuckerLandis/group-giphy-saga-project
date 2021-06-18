@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
-import Button from '@material-ui/core/Button'
+import Button from "@material-ui/core/Button";
+
 
 function ImageItem( {imageData }) {
     const dispatch = useDispatch();
@@ -10,22 +11,23 @@ function ImageItem( {imageData }) {
     const handleClick = () => {
         dispatch({type: 'POST_FAVORITE', payload: imageUrl})
     }
+    
+return (
+    <div className="card">
+      <div className="image-div">
+        <img src={imageUrl} alt="searched GIF" width="300px"></img>
+      </div>
+      <div className="button-div">
+        <Button color="primary" variant="contained" onClick={handleClick}>
+          Add to Favorites
+        </Button>
+      </div>
+    </div>
+  );
 
-
-    return (
-        <div>
-            <img src={imageUrl} alt="searched GIF"></img>
-            <Button
-                color="primary"
-                variant="contained"
-                onClick={handleClick}
-            >
-                Add to Favorites
-            </Button>
-        </div>
-    )
+    
 }
 
 export default ImageItem;
 
-// needs button to favorite, 
+// needs button to favorite,

@@ -7,6 +7,9 @@ import SearchForm from '../SearchForm/SearchForm.jsx';
 import ImageList from '../ImageList/ImageList.jsx';
 import FavoriteList from '../FavoriteList/FavoriteList.jsx';
 
+//style
+import './App.css'
+
 function App(props) {
   return (
     <Router>

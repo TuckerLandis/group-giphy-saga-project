@@ -1,0 +1,29 @@
+/* .images-display {
+   
+}
+
+.image-div{  
+   
+} */
+
+/* .button-div{
+    
+} */
+
+.card {
+    display: inline-block;
+    width: 300px;
+    padding: 1em;
+    
+}
+
+body{
+    background-color: lightslategrey;
+}
+
+.header{
+    font-size: 1.7em;
+    text-align: center;
+    text-shadow: 1px 1px gainsboro
+}
+
