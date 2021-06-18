@@ -6,7 +6,10 @@ function ImageItem( {imageData }) {
     // save image URL
     const imageUrl = imageData.images.original.url;
     
-
+    // on click of a favorite button, send the image URL to the watcher saga
+    const handleClick = () => {
+        dispatch({type: 'POST_FAVORITE', payload: imageUrl})
+    }
 
 
     return (
@@ -15,6 +18,7 @@ function ImageItem( {imageData }) {
             <Button
                 color="primary"
                 variant="contained"
+                onClick={handleClick}
             >
                 Add to Favorites
             </Button>
