@@ -18,12 +18,12 @@ function FavoriteList() {
   console.log(favoritesList);
   // console.log(categories);
   return (
-    <>
+    <div className="images-display">
       {/* // Map into FavoriteItem here */}
       {favoritesList.map((imageData, index) => (
         <FavoriteItem key={index} imageData={imageData} />
       ))}
-    </>
+    </div>
   );
 }
 
