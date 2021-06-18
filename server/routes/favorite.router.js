@@ -37,10 +37,11 @@ router.put('/:favId', (req, res) => {
 // delete a favorite
 router.delete('/:favId', (req, res) => {
   console.log('got to delete');
+  console.log('Req params', req.params);
   
 
   let queryText = `DELETE FROM "favorite" WHERE "id" = $1;`;
-  pool.query(queryText, [req.params.id])
+  pool.query(queryText, [req.params.favId])
   .then(result => {
     res.sendStatus(200);
   })
