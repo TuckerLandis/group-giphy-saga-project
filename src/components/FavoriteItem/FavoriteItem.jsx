@@ -8,6 +8,8 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
+import Button from "@material-ui/core/Button";
+
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -20,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function FavoriteItem({ imageData }) {
+    const dispatch = useDispatch();
   // Below allows us to use useStyles from above
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -36,6 +39,15 @@ function FavoriteItem({ imageData }) {
   }, [])
 
 
+  const handleDelete = () => {
+      console.log(imageData.url);
+    dispatch({
+        type: 'REMOVE_FAVORITE',
+        payload: imageData.url
+    })
+
+  }
+
   return (
     <div>
       <img src={imageData.url} alt="searched GIF"></img>
@@ -47,6 +59,7 @@ function FavoriteItem({ imageData }) {
           ))}
         </Select>
       </FormControl>
+      <Button variant="contained" color="secondary" onClick={handleDelete}>Remove</Button>
     </div>
   );
 }
