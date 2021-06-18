@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function FavoriteItem({ imageData }) {
-    const dispatch = useDispatch();
   // Below allows us to use useStyles from above
   const classes = useStyles();
   const dispatch = useDispatch();
