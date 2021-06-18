@@ -20,11 +20,11 @@ Data Model
 
 Components
 Route 1 ('/')
-- [ ] SearchForm
-- [ ] ImageList
+- [ ] SearchForm - Tucker
+- [ ] ImageList - Brandon
     - [ ] ImageItem
 Route 2 ('/favorite')
-- [ ] FavoriteList
+- [ ] FavoriteList - Jerry
     - [ ] FavoriteItem
 
 
