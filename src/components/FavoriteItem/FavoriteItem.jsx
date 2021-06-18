@@ -39,12 +39,13 @@ function FavoriteItem({ imageData }) {
   }, []);
 
   const handleDelete = () => {
-    console.log(imageData.url);
+      console.log(imageData);
     dispatch({
-      type: "REMOVE_FAVORITE",
-      payload: imageData.id,
-    });
-  };
+        type: 'REMOVE_FAVORITE',
+        payload: imageData.id
+    })
+
+  }
 
   return (
     <div className="card">
@@ -54,7 +55,7 @@ function FavoriteItem({ imageData }) {
       </div>
         <FormControl className={classes.formControl} required>
           <InputLabel id="demo-simple-select-label">
-            Set Favorite Category
+            Category
           </InputLabel>
           <Select value={selectState} onChange={handleChange}>
             {categories.map((category) => (
