@@ -40,7 +40,7 @@ router.delete('/:favUrl', (req, res) => {
   
 
   let queryText = `DELETE * FROM "favorite" WHERE "url" = $1`
-  pool.query(queryText, [req.query.favUrl])
+  pool.query(queryText, [req.params.favUrl])
   .then(result => {
     res.sendStatus(200);
   })
