@@ -29,7 +29,12 @@ const favoritesList = (state = [], action) => {
   }
 };
 const categories = (state = [], action) => {
-  return state;
+  switch (action.type) {
+    case "SET_CATEGORIES":
+      return action.payload;
+    default:
+      return state;
+  }
 };
 
 /***** SAGA WORKERS *****/
@@ -72,9 +77,10 @@ function* postFavorite(action) {
 
 function* fetchCategories() {
     try {
-
+      const response = yield axios.get('/api/category')
+      yield put({type: 'SET_CATEGORIES', payload: response.data})
     } catch {
-        
+      console.log(`We have a GET categories error... ${error}`)  
     }
 }
 
