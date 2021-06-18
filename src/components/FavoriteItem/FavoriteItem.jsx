@@ -39,12 +39,22 @@ function FavoriteItem({ imageData }) {
   }, []);
 
   const handleDelete = () => {
+<<<<<<< HEAD
+      console.log(imageData);
+    dispatch({
+        type: 'REMOVE_FAVORITE',
+        payload: imageData.id
+    })
+
+  }
+=======
     console.log(imageData.url);
     dispatch({
       type: "REMOVE_FAVORITE",
       payload: imageData.url,
     });
   };
+>>>>>>> master
 
   return (
     <div>
