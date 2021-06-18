@@ -28,6 +28,7 @@ function FavoriteItem({ imageData }) {
   const handleChange = (event) => {
     setSelectState(event.target.value);
   };
+
   return (
     <div>
       <h3>In FavoriteItem</h3>
