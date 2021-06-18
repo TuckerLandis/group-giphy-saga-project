@@ -97,7 +97,7 @@ function* removeFavorite(action) {
 
 function* updateFavoriteCategory(action) {
   const id = action.payload.id;
-  const data = action.payload.value;
+  const data = action.payload;
   try {
     yield axios.put(`/api/favorite/${id}`, data);
     yield put({ type: "FETCH_FAVORITES" });
