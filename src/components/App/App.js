@@ -7,11 +7,17 @@ import SearchForm from '../SearchForm/SearchForm.jsx';
 import ImageList from '../ImageList/ImageList.jsx';
 import FavoriteList from '../FavoriteList/FavoriteList.jsx';
 
+import Nav from '../Nav/Nav.js';
+
+//style
+import './App.css'
+
 function App(props) {
   return (
     <Router>
     <div>
       <Header />
+      <Nav />
       <Route path="/" exact>
         <SearchForm />
         <ImageList />
