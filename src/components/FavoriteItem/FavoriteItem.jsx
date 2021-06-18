@@ -49,6 +49,7 @@ function FavoriteItem({ imageData }) {
   return (
     <div className="card">
       <div className="image-div">
+        <h2>Category: {imageData.category}</h2>
         <img src={imageData.url} alt="searched GIF" width="300px"></img>
       </div>
         <FormControl className={classes.formControl} required>
