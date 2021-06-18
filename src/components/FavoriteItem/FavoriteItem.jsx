@@ -48,23 +48,29 @@ function FavoriteItem({ imageData }) {
   }
 
   return (
-    <div>
-      <img src={imageData.url} alt="searched GIF"></img>
-      <FormControl className={classes.formControl} required>
-        <InputLabel id="demo-simple-select-label">
-        Category
-        </InputLabel>
-        <Select value={selectState} onChange={handleChange}>
-          {categories.map((category) => (
-            <MenuItem key={category.id} value={category.name}>
-              {category.name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <Button variant="contained" color="secondary" onClick={handleDelete}>
-        Remove
-      </Button>
+    <div className="card">
+      <div className="image-div">
+        <h2>Category: {imageData.category}</h2>
+        <img src={imageData.url} alt="searched GIF" width="300px"></img>
+      </div>
+        <FormControl className={classes.formControl} required>
+          <InputLabel id="demo-simple-select-label">
+            Set Favorite Category
+          </InputLabel>
+          <Select value={selectState} onChange={handleChange}>
+            {categories.map((category) => (
+              <MenuItem key={category.id} value={category.name}>
+                {category.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      
+      <div className="button-div">
+        <Button variant="contained" color="secondary" onClick={handleDelete}>
+          Remove
+        </Button>
+      </div>
     </div>
   );
 }
