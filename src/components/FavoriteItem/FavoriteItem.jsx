@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 // Material-ui
 import { ImageSearch } from "@material-ui/icons";
@@ -25,12 +25,19 @@ function FavoriteItem({ imageData }) {
     const dispatch = useDispatch();
   // Below allows us to use useStyles from above
   const classes = useStyles();
+  const dispatch = useDispatch();
   // Local State to hold Select Value state
   const [selectState, setSelectState] = useState("");
+  // bring in categories
+  const categories = useSelector((store) => store.categories)
   // Handle Change function
   const handleChange = (event) => {
     setSelectState(event.target.value);
   };
+  useEffect(() => {
+    dispatch({ type: 'FETCH_CATEGORIES'});
+  }, [])
+
 
   const handleDelete = () => {
       console.log(imageData.url);
@@ -43,16 +50,13 @@ function FavoriteItem({ imageData }) {
 
   return (
     <div>
-      <h3>In FavoriteItem</h3>
       <img src={imageData.url} alt="searched GIF"></img>
       <FormControl className={classes.formControl} required>
         <InputLabel id="demo-simple-select-label">Set Favorite Category</InputLabel>
         <Select value={selectState} onChange={handleChange}>
-          <MenuItem value={"funny"}>Funny</MenuItem>
-          <MenuItem value={"cohort"}>Cohort</MenuItem>
-          <MenuItem value={"cartoon"}>Cartoon</MenuItem>
-          <MenuItem value={"nsfw"}>NSFW</MenuItem>
-          <MenuItem value={"meme"}>Meme</MenuItem>
+          {categories.map(category => (
+            <MenuItem key={category.id} value={category.name}>{category.name}</MenuItem>
+          ))}
         </Select>
       </FormControl>
       <Button variant="contained" color="secondary" onClick={handleDelete}>Remove</Button>
