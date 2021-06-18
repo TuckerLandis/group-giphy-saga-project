@@ -9,6 +9,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -68,7 +69,7 @@ function FavoriteItem({ imageData }) {
       
       <div className="button-div">
         <Button variant="contained" color="secondary" onClick={handleDelete}>
-          Remove
+          <DeleteIcon />
         </Button>
       </div>
     </div>
