@@ -31,7 +31,6 @@ function FavoriteItem({ imageData }) {
 
   return (
     <div>
-      <h3>In FavoriteItem</h3>
       <img src={imageData.url} alt="searched GIF"></img>
       <FormControl className={classes.formControl} required>
         <InputLabel id="demo-simple-select-label">Set Favorite Category</InputLabel>
