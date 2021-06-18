@@ -5,7 +5,7 @@ const router = express.Router();
 
 // return all favorite images
 router.get('/', (req, res) => {
-  pool.query('SELECT * FROM "favorite";').then((result) => {
+  pool.query('SELECT * FROM "favorite" ORDER BY "id" ASC;').then((result) => {
     res.send(result.rows);
   }).catch((error) => {
     console.log('Error GET /api/favorite', error);
