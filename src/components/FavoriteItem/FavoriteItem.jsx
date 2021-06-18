@@ -42,7 +42,7 @@ function FavoriteItem({ imageData }) {
     console.log(imageData.url);
     dispatch({
       type: "REMOVE_FAVORITE",
-      payload: imageData.url,
+      payload: imageData.id,
     });
   };
 
@@ -51,7 +51,7 @@ function FavoriteItem({ imageData }) {
       <img src={imageData.url} alt="searched GIF"></img>
       <FormControl className={classes.formControl} required>
         <InputLabel id="demo-simple-select-label">
-          Set Favorite Category
+        Category
         </InputLabel>
         <Select value={selectState} onChange={handleChange}>
           {categories.map((category) => (
