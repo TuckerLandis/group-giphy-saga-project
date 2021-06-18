@@ -28,7 +28,12 @@ const favoritesList = (state = [], action) => {
   }
 };
 const categories = (state = [], action) => {
-  return state;
+  switch (action.type) {
+    case "SET_CATEGORIES":
+      return action.payload;
+    default:
+      return state;
+  }
 };
 
 /***** SAGA WORKERS *****/
@@ -67,7 +72,24 @@ function* postFavorite(action) {
     } catch (error) {
         console.log(`We have a POST favorites error... ${error}`)
     }
+}
 
+function* fetchCategories() {
+    try {
+      const response = yield axios.get('/api/category')
+      yield put({type: 'SET_CATEGORIES', payload: response.data})
+    } catch {
+      console.log(`We have a GET categories error... ${error}`)  
+    }
+}
+
+function* removeFavorite(action) {
+    try {
+        yield axios.delete('/api/favorite')
+    } catch (error) {
+        console.log('error when removing favorite..', error);
+        
+    }
 }
 
 function* watcherSaga() {
@@ -77,6 +99,10 @@ function* watcherSaga() {
   yield takeEvery("FETCH_FAVORITES", fetchFavorites);
   // looks for client POST requests when adding an image to favorites
   yield takeEvery("POST_FAVORITE", postFavorite);
+  // removes favorite from favorite table
+  yield takeEvery('REMOVE_FAVORITE', removeFavorite)
+  // looks for requests to GET all of the categories from the DB
+  yield takeEvery("FETCH_CATEGORIES", fetchCategories)
 }
 
 const sagaMiddleware = createSagaMiddleware();
