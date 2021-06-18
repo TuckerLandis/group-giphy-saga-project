@@ -25,6 +25,7 @@ function SearchForm() {
         <form onSubmit={handleSubmit}>
         <TextField id="outlined-basic" label="Search a Gif!" variant="outlined"
         value={searchQuery} onChange={handleChange}
+        required
         />
         <Button type="submit" variant="outlined">Search</Button>
         </form>

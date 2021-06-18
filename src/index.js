@@ -11,7 +11,6 @@ import logger from "redux-logger";
 
 
 /***** REDUCERS ******/
-
 const searchResults = (state = [], action) => {
   switch (action.type) {
     case "SET_SEARCH_IMAGES":
@@ -53,7 +52,7 @@ function* fetchResults(action) {
 
 function* fetchFavorites() {
   try {
-    const response = yield axios.get("/favorite");
+    const response = yield axios.get("/api/favorite");
     yield put({type: "SET_FAVORITE_IMAGES", payload: response.data});
   } catch (error) {
     console.log(`We have a GET favorites error... ${error}`);
