@@ -1,15 +1,23 @@
+import { useDispatch, useSelector } from "react-redux";
 
 // components
-import FavoriteItem from '../FavoriteItem/FavoriteItem.jsx';
+import FavoriteItem from "../FavoriteItem/FavoriteItem.jsx";
 
 function FavoriteList() {
+  const dispatch = useDispatch();
+  const favoritesList = useSelector((store) => store.favoritesList);
 
-    // use effect for fetch favorites - from DB
 
-    return (
-        <h3>In FavoriteList</h3>
-        // Map into FavoriteItem here
-    )
+  console.log(favoritesList)
+  return (
+    <>
+      <h3>In FavoriteList</h3>
+      {/* // Map into FavoriteItem here */}
+      {favoritesList.map((imageData, index) => {
+        <FavoriteItem key={index} imageData={imageData} />;
+      })}
+    </>
+  );
 }
 
 export default FavoriteList;
