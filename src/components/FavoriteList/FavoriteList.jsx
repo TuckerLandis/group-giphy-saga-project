@@ -7,11 +7,9 @@ import FavoriteItem from "../FavoriteItem/FavoriteItem.jsx";
 function FavoriteList() {
   const dispatch = useDispatch();
   const favoritesList = useSelector((store) => store.favoritesList);
-  const categories = useSelector((store) => store.categories)
 
   const getFavs = () => {
     dispatch({ type: "FETCH_FAVORITES" });
-    dispatch({ type: 'FETCH_CATEGORIES'});
   };
 
   useEffect(() => {
