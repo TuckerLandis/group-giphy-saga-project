@@ -70,6 +70,14 @@ function* postFavorite(action) {
 
 }
 
+function* updateFavoriteCategory () {
+    try {
+        yield axios.put(`/api/favorite/:id`)
+    } catch(error) {
+        console.log(`We have a PUT favorites error... ${error}`)
+    }
+}
+
 function* watcherSaga() {
   // for every type: 'FETCH_RESULTS' ->> fetchResults (generator func)'
   yield takeEvery("FETCH_RESULTS", fetchResults);
