@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function FavoriteItem({ images }) {
+function FavoriteItem({ imageData }) {
   // Below allows us to use useStyles from above
   const classes = useStyles();
   // Local State to hold Select Value state
@@ -31,7 +31,7 @@ function FavoriteItem({ images }) {
   return (
     <div>
       <h3>In FavoriteItem</h3>
-      <img src={images.url} alt="searched GIF"></img>
+      <img src={imageData.url} alt="searched GIF"></img>
       <FormControl className={classes.formControl} required>
         <InputLabel id="demo-simple-select-label">Set Favorite Category</InputLabel>
         <Select value={selectState} onChange={handleChange}>
