@@ -42,7 +42,7 @@ function FavoriteItem({ imageData }) {
     console.log(imageData.url);
     dispatch({
       type: "REMOVE_FAVORITE",
-      payload: imageData.url,
+      payload: imageData.id,
     });
   };
 
