@@ -55,7 +55,7 @@ function FavoriteItem({ imageData }) {
       </div>
         <FormControl className={classes.formControl} required>
           <InputLabel id="demo-simple-select-label">
-            Set Favorite Category
+            Category
           </InputLabel>
           <Select value={selectState} onChange={handleChange}>
             {categories.map((category) => (
