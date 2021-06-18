@@ -8,6 +8,8 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
+import Button from "@material-ui/core/Button";
+
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -29,6 +31,15 @@ function FavoriteItem({ imageData }) {
     setSelectState(event.target.value);
   };
 
+  const handleDelete = () => {
+      console.log(imageData.url);
+    dispatch({
+        type: 'REMOVE_FAVORITE',
+        payload: imageData.url
+    })
+
+  }
+
   return (
     <div>
       <h3>In FavoriteItem</h3>
@@ -43,6 +54,7 @@ function FavoriteItem({ imageData }) {
           <MenuItem value={"meme"}>Meme</MenuItem>
         </Select>
       </FormControl>
+      <Button variant="contained" color="secondary" onClick={handleDelete}>Remove</Button>
     </div>
   );
 }

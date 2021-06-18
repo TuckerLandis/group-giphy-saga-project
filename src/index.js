@@ -70,6 +70,15 @@ function* postFavorite(action) {
 
 }
 
+function* removeFavorite(action) {
+    try {
+        yield axios.delete('/api/favorite')
+    } catch (error) {
+        console.log('error when removing favorite..', error);
+        
+    }
+}
+
 function* watcherSaga() {
   // for every type: 'FETCH_RESULTS' ->> fetchResults (generator func)'
   yield takeEvery("FETCH_RESULTS", fetchResults);
@@ -77,6 +86,8 @@ function* watcherSaga() {
   yield takeEvery("FETCH_FAVORITES", fetchFavorites);
   // looks for client POST requests when adding an image to favorites
   yield takeEvery("POST_FAVORITE", postFavorite);
+  // removes favorite from favorite table
+  yield takeEvery('REMOVE_FAVORITE', removeFavorite)
 }
 
 const sagaMiddleware = createSagaMiddleware();
