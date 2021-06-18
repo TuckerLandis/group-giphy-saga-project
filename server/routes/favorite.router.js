@@ -32,11 +32,17 @@ router.post('/', (req, res) => {
 router.put('/:favId', (req, res) => {
   // req.body should contain a category_id to add to this favorite image
   console.log(req.body)
+  let selectedId = req.body
+  let queryText = `UPDATE`
 
-  let queryText = ``
-
-
-  res.sendStatus(200);
+  pool.query(queryText, [selectedId])
+    .then(result => {
+      res.sendStatus(201);
+    })
+    .catch(error => {
+      console.log(`Error adding category to Favorite GIF`, error);
+      res.sendStatus(500);
+    });
 });
 
 // delete a favorite
