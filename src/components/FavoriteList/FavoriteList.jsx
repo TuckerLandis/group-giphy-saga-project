@@ -16,9 +16,9 @@ function FavoriteList() {
     getFavs();
   }, []);
   console.log(favoritesList);
+  // console.log(categories);
   return (
     <>
-      <h3>In FavoriteList</h3>
       {/* // Map into FavoriteItem here */}
       {favoritesList.map((imageData, index) => (
         <FavoriteItem key={index} imageData={imageData} />
