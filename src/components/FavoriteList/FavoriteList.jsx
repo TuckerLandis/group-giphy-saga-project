@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // components
@@ -6,8 +7,7 @@ import FavoriteItem from "../FavoriteItem/FavoriteItem.jsx";
 function FavoriteList() {
   const dispatch = useDispatch();
   const favoritesList = useSelector((store) => store.favoritesList);
-
-
+  
   console.log(favoritesList)
   return (
     <>
